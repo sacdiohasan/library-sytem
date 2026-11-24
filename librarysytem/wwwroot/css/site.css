@@ -1,0 +1,113 @@
+:root {
+  --ink: #202a26;
+  --muted: #65706b;
+  --paper: #f7f7f2;
+  --green: #21483c;
+  --orange: #e48a59;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+a:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+
+.site-header { height: 78px; background: var(--paper); }
+.nav-shell { width: min(1240px, calc(100% - 80px)); height: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: inline-flex; align-items: center; gap: 9px; font: 800 24px/1 "Manrope", sans-serif; letter-spacing: 0; }
+.brand-mark { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--green); font: 700 18px/1 "Manrope", sans-serif; }
+.nav-links { display: flex; gap: 38px; margin-left: 60px; color: #49534e; font-size: 14px; }
+.nav-links a, .nav-cta, .closing-note a { transition: color 160ms ease; }
+.nav-links a:hover, .closing-note a:hover { color: #bd6338; }
+.nav-cta { padding: 11px 16px; border: 1px solid #cdd1cb; border-radius: 3px; font-size: 13px; font-weight: 600; }
+.nav-cta span { margin-left: 12px; color: #bd6338; }
+.nav-cta:hover { color: #bd6338; border-color: #bd6338; }
+
+.hero {
+  position: relative;
+  min-height: 570px;
+  height: min(650px, calc(100svh - 78px));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  background: #354c40 url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2200&q=90") center 48% / cover no-repeat;
+}
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20, 35, 29, .84) 0%, rgba(20, 35, 29, .58) 47%, rgba(20, 35, 29, .08) 100%), linear-gradient(0deg, rgba(15, 30, 25, .26), transparent 35%); }
+.hero-content { position: relative; z-index: 1; width: min(1240px, calc(100% - 80px)); margin: -4px auto 0; animation: rise-in 650ms ease-out both; }
+.eyebrow { margin: 0 0 24px; display: flex; align-items: center; gap: 9px; color: rgba(255,255,255,.82); font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; }
+.eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: #efaa78; }
+.hero h1 { max-width: 700px; margin: 0; font: 600 66px/1.08 "Manrope", sans-serif; letter-spacing: 0; }
+.hero-copy { max-width: 450px; margin: 22px 0 28px; color: rgba(255,255,255,.82); font-size: 16px; line-height: 1.7; }
+.button { display: inline-flex; align-items: center; gap: 24px; padding: 14px 18px; border-radius: 3px; font-size: 13px; font-weight: 700; }
+.button-light { color: var(--ink); background: #f7f7f2; }
+.button-light span { color: #bd6338; }
+.button-light:hover { background: white; }
+.hero-caption { position: absolute; right: max(40px, calc((100% - 1240px) / 2)); bottom: 26px; left: max(40px, calc((100% - 1240px) / 2)); display: flex; justify-content: space-between; color: rgba(255,255,255,.75); font-size: 11px; letter-spacing: .3px; }
+
+.courses-section { width: min(1240px, calc(100% - 80px)); margin: 0 auto; padding: 98px 0 105px; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 39px; }
+.eyebrow-dark { margin-bottom: 12px; color: #77817b; }
+.eyebrow-dark span { background: var(--orange); }
+.section-heading h2 { margin: 0; font: 600 37px/1.2 "Manrope", sans-serif; letter-spacing: 0; }
+.section-intro { max-width: 330px; margin: 0 0 4px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.course-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px; }
+.course-image { position: relative; display: block; height: 235px; overflow: hidden; background: #d9ded5; }
+.course-image img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 450ms ease; }
+.course-image:hover img { transform: scale(1.035); }
+.image-design img { object-position: center 45%; }
+.image-data img { object-position: center; }
+.image-writing img { object-position: center 55%; }
+.image-label { position: absolute; left: 14px; bottom: 14px; padding: 7px 10px; color: white; background: rgba(28, 43, 36, .75); font-size: 10px; letter-spacing: .3px; }
+.course-meta { display: flex; justify-content: space-between; margin: 19px 0 8px; color: #7a837e; font-size: 11px; text-transform: uppercase; letter-spacing: .7px; }
+.course-card h3 { margin: 0; font: 600 20px/1.3 "Manrope", sans-serif; letter-spacing: 0; }
+.course-card > p { max-width: 340px; margin: 9px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+.closing-note { min-height: 150px; padding: 30px max(40px, calc((100% - 1240px) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 24px; background: #e8ede7; }
+.closing-note p { margin: 0; font: 500 23px/1.35 "Manrope", sans-serif; }
+.closing-note a { color: var(--green); font-size: 13px; font-weight: 700; }
+.closing-note a span { margin-left: 11px; color: #bd6338; }
+.site-footer { min-height: 100px; padding: 24px max(40px, calc((100% - 1240px) / 2)); display: flex; align-items: center; gap: 24px; color: #dfe6e0; background: #202a26; }
+.brand-footer { color: white; font-size: 19px; }
+.brand-footer .brand-mark { width: 24px; height: 24px; color: var(--green); background: #dfe6e0; font-size: 15px; }
+.site-footer p { margin: 0; color: #b7c0ba; font-size: 12px; }
+.footer-note { margin-left: auto; color: #98a39c; font-size: 11px; }
+
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 760px) {
+  .site-header { height: 68px; }
+  .nav-shell, .hero-content, .courses-section { width: calc(100% - 40px); }
+  .nav-links { gap: 18px; margin: 0; font-size: 12px; }
+  .nav-cta { display: none; }
+  .hero { min-height: 560px; height: calc(86svh - 68px); background-position: 58% center; }
+  .hero-shade { background: linear-gradient(90deg, rgba(20, 35, 29, .82), rgba(20, 35, 29, .36)), linear-gradient(0deg, rgba(15, 30, 25, .3), transparent 45%); }
+  .hero h1 { font-size: 49px; }
+  .hero-copy { max-width: 390px; font-size: 14px; }
+  .hero-caption { right: 20px; left: 20px; }
+  .courses-section { padding: 70px 0 76px; }
+  .section-heading { align-items: start; flex-direction: column; gap: 12px; margin-bottom: 27px; }
+  .section-heading h2 { font-size: 30px; }
+  .section-intro { max-width: 400px; }
+  .course-grid { grid-template-columns: 1fr; gap: 35px; }
+  .course-image { height: clamp(210px, 58vw, 330px); }
+  .closing-note { padding: 32px 20px; align-items: start; flex-direction: column; gap: 16px; }
+  .closing-note p { font-size: 21px; }
+  .site-footer { padding: 25px 20px; flex-wrap: wrap; gap: 13px 20px; }
+  .site-footer p { order: 3; width: 100%; }
+  .footer-note { margin-left: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
